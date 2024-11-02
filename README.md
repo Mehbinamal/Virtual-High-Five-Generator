@@ -65,17 +65,13 @@ For Software:
 
 ### Project Demo
 # Video
-[![Demo Video](documentation/demo-video.png)](documentation/demo-video.mp4)
+[![Demo Video](documentation/demo-video.png)](documentation/demo.webm)
 *Click to watch the demo, showcasing the high-five functionality and user interactions.*
 
 
-# Additional Demos
-[Add any extra demo materials/links]
-
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- **Amal Mehabin P**: UI design, JavaScript functionality, Netlify deployment
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
