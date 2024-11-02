@@ -34,11 +34,11 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[# Clone the repository
+[-Clone the repository
 git clone https://github.com/your-username/Virtual-High-Five-Generator.git
-cd Virtual-High-Five-Generator
+- cd Virtual-High-Five-Generator
 
-# Open index.html in your browser
+ - Open index.html in your browser
 open index.html
 ]
 
