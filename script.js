@@ -1,5 +1,13 @@
-// Initialize users from local storage or create an empty object
-let users = JSON.parse(localStorage.getItem('users')) || {};
+// Clear localStorage when the page is loaded
+window.addEventListener('load', () => {
+    localStorage.removeItem('users');
+});
+
+let users = {
+    // Adding two default users that will appear for every new user
+    "Alice": { highFives: 0, profilePicture: 'images/alice.png' },
+    "Bob": { highFives: 0, profilePicture: 'images/bob.png' }
+};
 let currentUser = null;
 
 // Function to render users
@@ -15,16 +23,16 @@ function renderUsers() {
 
         // Profile picture
         const userIcon = document.createElement('img');
-        userIcon.src = user.profilePicture || 'default-profile.png'; // Fallback to a default image
+        userIcon.src = user.profilePicture || 'images/default-profile.png'; // Default image if none uploaded
         userIcon.alt = `${username}'s profile picture`;
         userIcon.classList.add('user-icon');
 
         // User details
         const userDetails = document.createElement('div');
-        userDetails.innerHTML = `<strong>${username}</strong> <br> High-Fives: ${user.highFives}`;
+        userDetails.innerHTML = `<strong>${username}</strong><br> High-Fives: ${user.highFives}`;
         userDetails.classList.add('user-details');
 
-        // High-Five button
+        // High-Five button for other users
         if (username !== currentUser) {
             const highFiveBtn = document.createElement('button');
             highFiveBtn.textContent = 'High-Five 🖐';
@@ -41,12 +49,15 @@ function renderUsers() {
 
 // Function to give a high-five
 function giveHighFive(username) {
+    // Play high-five sound
+    const highFiveSound = document.getElementById('highFiveSound');
+    highFiveSound.play();
+
     users[username].highFives += 1;
-    localStorage.setItem('users', JSON.stringify(users));
     renderUsers();
 }
 
-// Function to handle image upload and conversion to base64
+// Function to handle image upload and convert to base64
 function handleImageUpload(file) {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -60,7 +71,7 @@ function handleImageUpload(file) {
 async function login() {
     const username = document.getElementById('username').value.trim();
     const profilePictureInput = document.getElementById('profilePicture');
-    
+
     if (username) {
         currentUser = username;
 
@@ -70,14 +81,14 @@ async function login() {
             profilePicture = await handleImageUpload(profilePictureInput.files[0]);
         }
 
-        // Add user to "database" if not present
+        // Add or update user
         if (!users[username]) {
             users[username] = { highFives: 0, profilePicture };
+        } else if (profilePicture) {
+            users[username].profilePicture = profilePicture;
         }
 
-        localStorage.setItem('users', JSON.stringify(users));
-
-        // Show app and render users
+        // Update UI
         document.querySelector('.login-container').style.display = 'none';
         document.getElementById('app').style.display = 'block';
         document.getElementById('currentUser').textContent = username;
@@ -88,6 +99,8 @@ async function login() {
 // Function to log out
 function logout() {
     currentUser = null;
+    document.getElementById('username').value = ''; // Clear username input
+    document.getElementById('profilePicture').value = ''; // Clear profile picture input
     document.querySelector('.login-container').style.display = 'block';
     document.getElementById('app').style.display = 'none';
 }
