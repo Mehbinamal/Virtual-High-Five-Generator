@@ -49,13 +49,13 @@ open index.html
 For Software:
 
 # Screenshots 
-![Login Page](documentation/home screen.png)
+![Login Page](documentation/home_screen.png)
 *The login screen, where users enter a username and upload a profile picture.*
 
-![Main Interface](documentation/login screen 1.png)
+![Main Interface](documentation/loginscreen1.png)
 *The main app interface showing users online and high-five options.*
 
-![High-Five Action](documentation/login screen 2.png)
+![High-Five Action](documentation/loginscreen2.png)
 *A user giving a high-five with a sound effect to celebrate!*
 
 # Diagrams
