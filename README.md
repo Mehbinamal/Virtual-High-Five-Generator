@@ -65,8 +65,9 @@ For Software:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+[![Demo Video](documentation/demo-video.png)](documentation/demo-video.mp4)
+*Click to watch the demo, showcasing the high-five functionality and user interactions.*
+
 
 # Additional Demos
 [Add any extra demo materials/links]
