@@ -48,15 +48,15 @@ open index.html
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+# Screenshots 
+![Login Page](documentation/home screen.png)
+*The login screen, where users enter a username and upload a profile picture.*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Main Interface](documentation/login screen 1.png)
+*The main app interface showing users online and high-five options.*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![High-Five Action](documentation/login screen 2.png)
+*A user giving a high-five with a sound effect to celebrate!*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
